@@ -15,7 +15,7 @@ jobs:
       with:
         python-version: '3.8'
     - name: Install requirements
-      run: pip install -r .github/workflows/wiki_storage_telegram_bot/wiki_storage_telegram_bot.py
+      run: pip install -r .github/workflows/wiki_storage_telegram_bot/requirements.txt
       env:
         CHAT_ID: ${{ secrets.WIKI_STORAGE_CHAT_ID }}
         SECRET_TOKEN: ${{ secrets.WIKI_STORAGE_SECRET_TOKEN }}
