@@ -12,7 +12,7 @@ from firebase_admin import firestore
 CHAT_ID = os.environ['TELEGRAM_CHAT_ID']
 SECRET_TOKEN = os.environ['TELEGRAM_SECRET_TOKEN']
 FIREBASE_PROJECT_ID = os.environ['FIREBASE_PROJECT_ID']
-FIREBASE_AUTH = os.environ['FIREBASE']
+FIREBASE_AUTH = os.environ['FIREBASE_AUT']
 BASE_PATH = os.path.abspath('.')
 
 print(type(FIREBASE_AUTH))
