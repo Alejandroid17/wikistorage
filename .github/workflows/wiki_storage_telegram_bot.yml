@@ -1,8 +1,9 @@
 name: Wiki Storage Telegram Bot
 
 on:
-  schedule:
-    - cron: '* */1 * * *'
+  push:
+    branches:
+      - master
 
 jobs:
   build:
