@@ -141,7 +141,7 @@ class WikiStorageTelegramBot:
 
 
 def main():
-    WikiStorageTelegramBot(CHAT_ID, SECRET_TOKEN, FIREBASE_PROJECT_ID, json.dumps(FIREBASE_AUTH)).run()
+    WikiStorageTelegramBot(CHAT_ID, SECRET_TOKEN, FIREBASE_PROJECT_ID, json.loads(FIREBASE_AUTH)).run()
 
 
 if __name__ == '__main__':
