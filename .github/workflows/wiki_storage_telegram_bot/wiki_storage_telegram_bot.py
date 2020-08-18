@@ -12,6 +12,7 @@ from firebase_admin import firestore
 CHAT_ID = os.environ['TELEGRAM_CHAT_ID']
 SECRET_TOKEN = os.environ['TELEGRAM_SECRET_TOKEN']
 FIREBASE_PROJECT_ID = os.environ['FIREBASE_PROJECT_ID']
+FIREBASE_AUTH = os.environ['FIREBASE_AUTH']
 BASE_PATH = os.path.abspath('.')
 
 
@@ -33,10 +34,10 @@ class WikiStorageTelegramBot:
 
     doc_ref = None
 
-    def __init__(self, chat_id, secret_token, firebase_project_id):
+    def __init__(self, chat_id, secret_token, firebase_project_id, firebase_auth):
         # self.bot = telegram.Bot(token=secret_token)
         # self.chat_id = chat_id
-        self.doc_ref = self._init_cloud_firestone(firebase_project_id)
+        self.doc_ref = self._init_cloud_firestone(firebase_project_id, firebase_auth)
         # self._telegram_status()
         # self._read_dataframe()
         self.doc_ref.set({
@@ -45,8 +46,8 @@ class WikiStorageTelegramBot:
             u'creation_date': 123123123
         })
 
-    def _init_cloud_firestone(self, firebase_project_id):
-        cred = credentials.ApplicationDefault()
+    def _init_cloud_firestone(self, firebase_project_id, firebase_auth):
+        cred = credentials.Certificate(firebase_auth)
         firebase_admin.initialize_app(cred, {
             'projectId': firebase_project_id,
         })
@@ -138,7 +139,7 @@ class WikiStorageTelegramBot:
 
 
 def main():
-    WikiStorageTelegramBot(CHAT_ID, SECRET_TOKEN, FIREBASE_PROJECT_ID).run()
+    WikiStorageTelegramBot(CHAT_ID, SECRET_TOKEN, FIREBASE_PROJECT_ID, FIREBASE_AUTH).run()
 
 
 if __name__ == '__main__':
