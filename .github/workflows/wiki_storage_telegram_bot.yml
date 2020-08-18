@@ -9,20 +9,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-      - name: Install requirements
-        run: pip install -r .github/workflows/wiki_storage_telegram_bot/wiki_storage_telegram_bot.py
-        env:
-          CHAT_ID: ${{ secrets.WIKI_STORAGE_CHAT_ID }}
-          SECRET_TOKEN: ${{ secrets.WIKI_STORAGE_SECRET_TOKEN }}
-      - name: Update repo
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: 🐱‍🏍
-          author_email: alejandrofernandezm94@gmail.com
-          message: '[GitHub Actions] - New entries, more fun!'
-          add: '*'
+    - uses: action/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install requirements
+      run: pip install -r .github/workflows/wiki_storage_telegram_bot/wiki_storage_telegram_bot.py
+      env:
+        CHAT_ID: ${{ secrets.WIKI_STORAGE_CHAT_ID }}
+        SECRET_TOKEN: ${{ secrets.WIKI_STORAGE_SECRET_TOKEN }}
+    - name: Update repo
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: 🐱‍🏍
+        author_email: alejandrofernandezm94@gmail.com
+        message: '[GitHub Actions] - New entries, more fun!'
+        add: '*'
