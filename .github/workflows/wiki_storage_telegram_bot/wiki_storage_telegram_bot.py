@@ -15,7 +15,6 @@ FIREBASE_PROJECT_ID = os.environ['FIREBASE_PROJECT_ID']
 FIREBASE_AUTH = os.environ['FIREBASE_AUTH']
 BASE_PATH = os.path.abspath('.')
 
-print(type(FIREBASE_AUTH))
 
 
 class WikiStorageTelegramBot:
@@ -54,7 +53,7 @@ class WikiStorageTelegramBot:
             'projectId': firebase_project_id,
         })
         db = firestore.client()
-        return db.collection(u'wiki').document(u'link')
+        return db.collection(u'wiki')
 
     def _telegram_status(self):
         telegram_status_path = os.path.join(BASE_PATH, self.telegram_status_filename)
