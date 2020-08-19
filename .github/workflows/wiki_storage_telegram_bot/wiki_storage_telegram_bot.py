@@ -53,7 +53,7 @@ class WikiStorageTelegramBot:
             'projectId': firebase_project_id,
         })
         db = firestore.client()
-        return db.collection(u'wiki')
+        return db.collection(u'wiki').document()
 
     def _telegram_status(self):
         telegram_status_path = os.path.join(BASE_PATH, self.telegram_status_filename)
