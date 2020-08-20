@@ -11,7 +11,6 @@ CHAT_ID = os.environ['TELEGRAM_CHAT_ID']
 SECRET_TOKEN = os.environ['TELEGRAM_SECRET_TOKEN']
 FIREBASE_PROJECT_ID = os.environ['FIREBASE_PROJECT_ID']
 FIREBASE_AUTH = os.environ['FIREBASE_AUTH']
-
 BASE_PATH = os.path.abspath('.')
 
 
@@ -72,11 +71,13 @@ class WikiStorageTelegramBot:
         return any(entity['type'] == entity_type for entity in entity_list)
 
     def _filter_telegram_messages_saved(self, update):
-        is_saved = update['channel_post']['message_id'] <= self.telegram_stat['last_message_id']
-        entity_list = update['channel_post']['entities']
-        return (not is_saved
-                and self._has_entity_type(entity_list, 'url')
-                and self._has_entity_type(entity_list, 'hashtag'))
+        if hasattr(update, 'channel_post') and update['channel_post']:
+            is_saved = update['channel_post']['message_id'] <= self.telegram_stat['last_message_id']
+            entity_list = update['channel_post']['entities']
+            return (not is_saved
+                    and self._has_entity_type(entity_list, 'url')
+                    and self._has_entity_type(entity_list, 'hashtag'))
+        return False
 
     def _read_telegram_channel(self):
         update_list = filter(self._filter_telegram_messages_saved, self.bot.get_updates())
@@ -141,7 +142,8 @@ class WikiStorageTelegramBot:
 
 
 def main():
-    WikiStorageTelegramBot(CHAT_ID, SECRET_TOKEN, FIREBASE_PROJECT_ID, json.loads(FIREBASE_AUTH)).run()
+    # WikiStorageTelegramBot(CHAT_ID, SECRET_TOKEN, FIREBASE_PROJECT_ID, json.loads(FIREBASE_AUTH)).run()
+    WikiStorageTelegramBot(CHAT_ID, SECRET_TOKEN, FIREBASE_PROJECT_ID, FIREBASE_AUTH).run()
 
 
 if __name__ == '__main__':
