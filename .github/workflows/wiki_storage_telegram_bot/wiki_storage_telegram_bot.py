@@ -61,6 +61,7 @@ class WikiStorageTelegramBot:
         text = update['channel_post']['text']
         for entity in entities:
             entity_value = text[entity.offset: entity.offset + entity.length]
+            entity_value = entity_value.replace('#', '') if entity.type == 'hashtag' else entity_value
             if not entity.type in a:
                 a[entity.type] = [entity_value]
             else:
