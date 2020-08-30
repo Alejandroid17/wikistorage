@@ -9,7 +9,7 @@ library.add(faBoxOpen, faSearch, faGithub)
 export default function MainNavigation({onSearch}) {
     return (
         <div className="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
-            <div className="container is-fluid px-1">
+            <div className="container is-fluid px-1 py-1">
                 <div className="columns is-desktop is-vcentered mx-0" style={{'width': '100%'}}>
                     <div className="column is-3">
                         <FontAwesomeIcon icon={faBoxOpen} size="2x"/>
@@ -19,7 +19,7 @@ export default function MainNavigation({onSearch}) {
                         <SearchInput onChange={onSearch}/>
                     </div>
                     <div className="column is-3">
-                        <FontAwesomeIcon icon={faGithub} size="2x" className='is-pulled-right is-hidden-mobile'/>
+                        <FontAwesomeIcon icon={faGithub} size="2x" className='is-pulled-right is-hidden-mobile is-hidden-tablet-only'/>
                     </div>
                 </div>
             </div>

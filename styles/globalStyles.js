@@ -18,4 +18,15 @@ export const globalStyles = css.global`
   .w-100 {
     width: 100%
   }
+  
+  @media (max-width: 1025px) {
+    main {
+      padding-top: 5rem;
+    }
+    
+    .navbar .column {
+      width: 100% !important;
+      padding: 0.5rem 0.75rem;
+    }
+  }
 `
