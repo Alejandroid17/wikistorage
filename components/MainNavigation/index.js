@@ -19,7 +19,7 @@ export default function MainNavigation({onSearch}) {
                         <SearchInput onChange={onSearch}/>
                     </div>
                     <div className="column is-3">
-                        <FontAwesomeIcon icon={faGithub} size="2x" className='is-pulled-right'/>
+                        <FontAwesomeIcon icon={faGithub} size="2x" className='is-pulled-right is-hidden-mobile'/>
                     </div>
                 </div>
             </div>
