@@ -8,23 +8,21 @@ library.add(faBoxOpen, faSearch, faGithub)
 
 export default function MainNavigation({onSearch}) {
     return (
-        <nav className="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
-            <div className="navbar-menu">
-                <div className="navbar-item">
-                    <FontAwesomeIcon icon={faBoxOpen} size="2x"/> <span
-                    className="title is-4 ml-2 is-hidden-mobile">WikiStorage</span>
-                </div>
-                <div className="container">
-                    <div className="navbar-item">
+        <div className="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+            <div className="container is-fluid px-1">
+                <div className="columns is-desktop is-vcentered mx-0" style={{'width': '100%'}}>
+                    <div className="column is-3">
+                        <FontAwesomeIcon icon={faBoxOpen} size="2x"/>
+                        <span className="title ml-2">WikiStorage</span>
+                    </div>
+                    <div className="column is-6">
                         <SearchInput onChange={onSearch}/>
+                    </div>
+                    <div className="column is-3">
+                        <FontAwesomeIcon icon={faGithub} size="2x" className='is-pulled-right'/>
                     </div>
                 </div>
             </div>
-            <div className="navbar-end">
-                <a className="navbar-item" href="https://github.com/Alejandroid17/wikistorage">
-                    <FontAwesomeIcon icon={faGithub} size="2x"/>
-                </a>
-            </div>
-        </nav>
+        </div>
     )
 }
