@@ -22,7 +22,7 @@ In the secret settings of your project on GitHub, you need to define:
 
 #### Firebase
 
-In the secret settings of your project on GitHUb, you need to define:
+In the secret settings of your project on GitHub, you need to define:
 
 - **FIREBASE_PROJECT_ID**: Firebase project id.
 - **FIREBASE_AUTH**: Firebase settings auth.
