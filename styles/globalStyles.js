@@ -22,11 +22,16 @@ export const globalStyles = css.global`
   @media (max-width: 1025px) {
     main {
       padding-top: 5rem;
+      overflow-y: hidden;
     }
     
     .navbar .column {
       width: 100% !important;
       padding: 0.5rem 0.75rem;
+    }
+    
+    .navbar {
+      padding-top: 0.5rem;
     }
   }
 `
