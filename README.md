@@ -1,3 +1,8 @@
+<p>
+     <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Alejandroid17/wikistorage">
+     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Alejandroid17/wikistorage">
+</p>
+
 # WikiStorage
 [WikiStorage](https://wikistorage.vercel.app/) is a simple project with a list of resources that could be useful.
 
