@@ -1,3 +1,8 @@
+<p>
+     <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Alejandroid17/wikistorage">
+     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Alejandroid17/wikistorage">
+</p>
+
 # WikiStorage
 [WikiStorage](https://wikistorage.vercel.app/) is a simple project with a list of resources that could be useful.
 
@@ -17,7 +22,7 @@ In the secret settings of your project on GitHub, you need to define:
 
 #### Firebase
 
-In the secret settings of your project on GitHUb, you need to define:
+In the secret settings of your project on GitHub, you need to define:
 
 - **FIREBASE_PROJECT_ID**: Firebase project id.
 - **FIREBASE_AUTH**: Firebase settings auth.
