@@ -1,4 +1,5 @@
-import * as firebase from "firebase"
+import firebase from "firebase/app"
+import 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyB7RShEHIe_X8_461kyeedfcZvtKlroDiw",
@@ -18,15 +19,15 @@ export default class firebaseClient {
         this.collection = collection;
     }
 
-    fetchWikis() {
-        return this.db.collection(this.collection).get().then(({docs}) => {
-            return docs.map((doc) => {
+    fetchWikis(callBack) {
+        this.db.collection(this.collection).orderBy('creation_date', 'desc').onSnapshot(({docs}) => {
+            callBack(docs.map((doc) => {
                 const id = doc.id;
                 return {
                     ...doc.data(),
                     id
                 }
-            });
+            }));
         });
     }
 

@@ -18,8 +18,8 @@ export default function Home() {
     useEffect(() => {
         if (isLoading) {
             client = new firebaseClient('wiki');
-            client.fetchWikis().then(data => {
-                setWikiList(data);
+            client.fetchWikis((wikiList) => {
+                setWikiList(wikiList);
                 setIsLoading(false);
             });
         }
