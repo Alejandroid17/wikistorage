@@ -26,7 +26,8 @@ export default function Wiki({url}) {
                         maxLine={3}
                         minLine={1}
                         url={url}
-                        proxyUrl={'https://cors-proxy.htmldriven.com/?url='}
+                        proxyUrl={false}
+                        requestHeaders={{"Access-Control-Allow-Origin": "*"}}
                     />
                     <style jsx global>{globalStyles}</style>
                 </div>
