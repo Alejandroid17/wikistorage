@@ -26,8 +26,7 @@ export default function Wiki({url}) {
                         maxLine={3}
                         minLine={1}
                         url={url}
-                        proxyUrl={false}
-                        requestHeaders={{"Access-Control-Allow-Origin": "no-cors"}}
+                        proxyUrl={'https://thingproxy.freeboard.io/fetch'}
                     />
                     <style jsx global>{globalStyles}</style>
                 </div>
