@@ -5,7 +5,7 @@ module.exports = {
         {
           source: "/",
           headers: [
-            { key: "Access-Control-Allow-Origin", value: "*" },
+            { key: "Access-Control-Allow-Origin", value: "no-cors" },
           ]
         }
       ]
