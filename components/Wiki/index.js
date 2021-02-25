@@ -27,7 +27,7 @@ export default function Wiki({url}) {
                         minLine={1}
                         url={url}
                         proxyUrl={false}
-                        requestHeaders={{"Access-Control-Allow-Origin": "*"}}
+                        requestHeaders={{"access-control-allow-origin": "*"}}
                     />
                     <style jsx global>{globalStyles}</style>
                 </div>
