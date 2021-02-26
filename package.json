@@ -19,6 +19,5 @@
     "react-dom": "16.13.1",
     "react-tiny-link": "^3.6.1",
     "react-transition-group": "^4.4.1"
-  },
-  "proxy": "http://localhost:3000"
+  }
 }
