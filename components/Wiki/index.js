@@ -26,7 +26,7 @@ export default function Wiki({url}) {
                         maxLine={3}
                         minLine={1}
                         url={url}
-                        proxyUrl={'https://thingproxy.freeboard.io/fetch'}
+                        proxyUrl={"https://infinite-proxy-cors.herokuapp.com"}
                     />
                     <style jsx global>{globalStyles}</style>
                 </div>
