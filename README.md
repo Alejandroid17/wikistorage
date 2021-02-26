@@ -4,6 +4,7 @@
 </p>
 
 # WikiStorage
+
 [WikiStorage](https://wikistorage.vercel.app/) is a simple project with a list of resources that could be useful.
 
 ## Usage
@@ -35,6 +36,8 @@ In the secret settings of your project on GitHub, you need to define:
 ## Deploy
 
 This proyect is deployed using Vercel. [Demo](https://wikistorage.vercel.app/)
+
+> Notes: You need to define a `cors` proxy. The project uses a custom private fork of [CORS Anywhere](https://github.com/Rob--W/cors-anywhere).
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
