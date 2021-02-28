@@ -14,9 +14,14 @@ export const globalStyles = css.global`
     padding: 0;
     margin: 0;
   }
-  
-  .w-100 {
-    width: 100%
+
+  html[theme='dark'] {
+    background: #000;
+    filter: invert(1) hue-rotate(180deg)
+  }
+
+  html[theme='dark'] .react_tinylink_card_media {
+    filter: invert(1) hue-rotate(180deg)
   }
   
   @media (max-width: 1025px) {
