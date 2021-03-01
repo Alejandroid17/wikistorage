@@ -1,15 +1,15 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
-import { faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
 
-const ThemeSwitch = ({className, size}) => {
+const ThemeSwitch = ({ className, size }) => {
 
-    const { theme, toggleTheme } = useContext(ThemeContext);
+    const [state, dispatch] = useContext(GlobalContext);
 
     return (
-        <a onClick={toggleTheme} className={className}>
-            {theme === 'light' ? <FontAwesomeIcon icon={faMoon} size={size}/> : <FontAwesomeIcon icon={faSun} size={size}/>}
+        <a onClick={() => dispatch({ type: 'TOGGLE_THEME' })} className={className}>
+            {state.theme === 'light' ? <FontAwesomeIcon icon={faMoon} size={size} /> : <FontAwesomeIcon icon={faSun} size={size} />}
         </a>
     )
 }
