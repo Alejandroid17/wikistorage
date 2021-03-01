@@ -1,5 +1,6 @@
-import 'bulma/css/bulma.min.css'
-import GlobalContextProvider from '../context/GlobalContext'
+import 'bulma/css/bulma.min.css';
+import GlobalContextProvider from '../contexts/GlobalContext';
+
 
 function MyApp({ Component, pageProps }) {
 
