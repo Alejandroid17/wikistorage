@@ -17,10 +17,8 @@ export default function MainNavigation({ onSearch }) {
                         <FontAwesomeIcon icon={faBoxOpen} size="2x" />
                         <span className="title ml-2">WikiStorage</span>
                         <ThemeSwitch size={'lg'} className={'is-pulled-right mr-5 mt-1'} />
-
                     </div>
                     <div className="column is-6">
-
                         <SearchInput onChange={onSearch} />
                     </div>
                     <div className="column is-3">

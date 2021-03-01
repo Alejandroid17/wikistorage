@@ -1,11 +1,11 @@
 import 'bulma/css/bulma.min.css'
-import ThemeContextProvider from '../context/ThemeContext'
+import GlobalContextProvider from '../context/GlobalContext'
 
 function MyApp({ Component, pageProps }) {
 
-  return <ThemeContextProvider>
+  return <GlobalContextProvider>
     <Component {...pageProps} />
-  </ThemeContextProvider>
+  </GlobalContextProvider>
 }
 
 export default MyApp
