@@ -2,6 +2,7 @@ import React, { createContext, useReducer } from "react";
 
 const initialState = {
     theme: 'light',
+    compact: false,
 }
 
 export const GlobalContext = createContext(initialState);
@@ -15,6 +16,11 @@ const GlobalContextReducer = (state, action) => {
             };
             document.documentElement.setAttribute('theme', newState.theme);
             return newState;
+        case 'TOGGLE_COMPACT':
+            return {
+                ...state,
+                compact: !state.compact
+            }
         default: return state;
     }
 }

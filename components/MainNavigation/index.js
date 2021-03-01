@@ -2,6 +2,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBoxOpen, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CompactSwitch from "../CompactSwitch";
 import SearchInput from "../SearchInput";
 import ThemeSwitch from "../ThemeSwitch";
 
@@ -16,6 +17,7 @@ export default function MainNavigation({ onSearch }) {
                     <div className="column is-3">
                         <FontAwesomeIcon icon={faBoxOpen} size="2x" />
                         <span className="title ml-2">WikiStorage</span>
+                        <CompactSwitch size={'lg'} className={'is-pulled-right mr-5 mt-1'} />
                         <ThemeSwitch size={'lg'} className={'is-pulled-right mr-5 mt-1'} />
                     </div>
                     <div className="column is-6">
