@@ -1,7 +1,7 @@
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 const ThemeSwitch = ({ className, size }) => {
 
@@ -9,7 +9,11 @@ const ThemeSwitch = ({ className, size }) => {
 
     return (
         <a onClick={() => dispatch({ type: 'TOGGLE_THEME' })} className={className}>
-            {state.theme === 'light' ? <FontAwesomeIcon icon={faMoon} size={size} /> : <FontAwesomeIcon icon={faSun} size={size} />}
+            {
+                (state.theme === 'light')
+                    ? <FontAwesomeIcon icon={faMoon} size={size} />
+                    : <FontAwesomeIcon icon={faSun} size={size} />
+            }
         </a>
     )
 }

@@ -1,7 +1,7 @@
 import { faThList, faTh } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 const CompactSwitch = ({ className, size }) => {
 
@@ -9,7 +9,11 @@ const CompactSwitch = ({ className, size }) => {
 
     return (
         <a onClick={() => dispatch({ type: 'TOGGLE_COMPACT' })} className={className}>
-            {state.compact ? <FontAwesomeIcon icon={faTh} size={size} /> : <FontAwesomeIcon icon={faThList} size={size} />}
+            {
+                state.compact
+                    ? <FontAwesomeIcon icon={faTh} size={size} />
+                    : <FontAwesomeIcon icon={faThList} size={size} />
+            }
         </a>
     )
 }

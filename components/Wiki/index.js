@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ReactTinyLink } from 'react-tiny-link';
 import { Transition } from "react-transition-group";
-import { GlobalContext } from '../../context/GlobalContext';
+import { GlobalContext } from '../../contexts/GlobalContext';
 import { defaultTransitionStyle, globalStyles, transitionDuration, transitionStyles } from './styles';
 
 
