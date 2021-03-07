@@ -1,13 +1,19 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function SearchInput({onChange}) {
+
+const SearchInput = ({ onChange }) => {
     return (
-        <div className="field w-100">
-            <p className="control has-icons-left">
-                <input className="input is-rounded" type="text" placeholder="Search" onChange={onChange}/>
-                <span className="icon is-small is-left"><FontAwesomeIcon icon={faSearch}/></span>
-            </p>
-        </div>
+        <InputGroup boxShadow="lg">
+            <InputLeftElement
+                pointerEvents="none"
+                color="gray.500"
+                children={<FontAwesomeIcon icon={faSearch} size='md' />}
+            />
+            <Input type="text" placeholder="Search" onChange={onChange} />
+        </InputGroup>
     )
 }
+
+export default SearchInput;
