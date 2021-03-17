@@ -1,12 +1,14 @@
-import Head from 'next/head';
 
-import {globalStyles} from './../styles/globalStyles'
-
-import MainNavigation from "../components/MainNavigation";
-import WikiLibrary from "../components/WikiLibrary";
-import Footer from "../components/Footer";
-import {useEffect, useState} from "react";
+import { Box } from '@chakra-ui/react';
+import { useEffect, useState } from "react";
 import firebaseClient from "../clients/firebase";
+import Footer from "../components/Footer/MainFooter/MainFooter";
+import Head from '../components/Head/Head';
+import MainHeader from '../components/Header/MainHeader/MainHeader';
+import BaseMain from '../components/Main/BaseMain/BaseMain';
+import WikiLibrary from "../components/WikiLibrary/WikiLibrary";
+import { globalStyles } from './../styles/globalStyles';
+
 
 export default function Home() {
 
@@ -36,16 +38,12 @@ export default function Home() {
     const list = search();
     return (
         <>
-            <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <meta charSet="utf-8"/>
-                <title>WikiStorage</title>
-            </Head>
-            <MainNavigation onSearch={onSearch}/>
-            <main>
-                <WikiLibrary wikiList={list} isLoading={isLoading}/>
-            </main>
-            <Footer/>
+            <Head />
+            <MainHeader onSearch={onSearch} />
+            <BaseMain>
+                <WikiLibrary wikiList={list} isLoading={isLoading} />
+            </BaseMain>
+            <Footer />
             <style jsx global>
                 {globalStyles}
             </style>

@@ -25,7 +25,7 @@ export default function Wiki({ url }) {
                     <ReactTinyLink
                         cardSize={contextState.compact ? 'small' : 'large'}
                         showGraphic={true}
-                        maxLine={3}
+                        maxLine={contextState.compact ? 2 : 3}
                         minLine={1}
                         url={url}
                         proxyUrl={"https://infinite-proxy-cors.herokuapp.com"}
