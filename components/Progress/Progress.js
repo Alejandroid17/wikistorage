@@ -14,6 +14,7 @@ const Progress = ({
 
     const shuffle = useCallback(() => {
         setText(currentState => {
+            (items.length <= 0) ? clearInterval(currentState.id) : null;
             let index = ++currentState.index;
             index = (mode === 'loop' && index > items.length - 1) ? 0 : index;
             (mode === 'stop' && index >= items.length - 1) ? clearInterval(currentState.id) : null;
@@ -29,15 +30,10 @@ const Progress = ({
     }, []);
 
     useEffect(() => {
-        if (items.length > 0) {
-            const intervalID = setInterval(shuffle, time);
-            setText(state => { return { ...state, id: intervalID } });
-        }
-        return () => {
-            if (items.length > 0) {
-                clearInterval(intervalID);
-            }
-        }
+        const intervalID = setInterval(shuffle, time);
+        setText(state => { return { ...state, id: intervalID } });
+
+        return () => clearInterval(intervalID);
     }, [shuffle]);
 
     return (
