@@ -1,12 +1,14 @@
-import 'bulma/css/bulma.min.css';
 import GlobalContextProvider from '../contexts/GlobalContext';
+import { ChakraProvider } from "@chakra-ui/react"
 
 
 function MyApp({ Component, pageProps }) {
 
-  return <GlobalContextProvider>
-    <Component {...pageProps} />
-  </GlobalContextProvider>
+  return <ChakraProvider>
+    <GlobalContextProvider>
+      <Component {...pageProps} />
+    </GlobalContextProvider>
+  </ChakraProvider>
 }
 
 export default MyApp

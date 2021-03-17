@@ -1,13 +1,13 @@
-import { Center, Flex, HStack } from '@chakra-ui/react';
+import { Flex, HStack } from '@chakra-ui/react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBoxOpen, faSearch } from '@fortawesome/free-solid-svg-icons';
-import SearchInput from '../../SearchInput';
-import BaseHeader from '../BaseHeader/BaseHeader';
-import TitleHeader from '../TitleHeader/TitleHeader';
-import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
 import CompactSwitch from '../../CompactSwitch/CompactSwitch';
 import GitHubLink from '../../Link/GitHubLink';
+import SearchInput from '../../SearchInput';
+import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
+import BaseHeader from '../BaseHeader/BaseHeader';
+import TitleHeader from '../TitleHeader/TitleHeader';
 
 
 library.add(faBoxOpen, faSearch, faGithub)

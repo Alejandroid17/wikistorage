@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 class MyDocument extends Document {
   render() {
     return (
-      <Html className="has-navbar-fixed-top">
+      <Html lang="en">
         <Head />
         <body>
           <Main />

@@ -9,7 +9,7 @@ const SearchInput = ({ onChange }) => {
             <InputLeftElement
                 pointerEvents="none"
                 color="gray.500"
-                children={<FontAwesomeIcon icon={faSearch} size='md' />}
+                children={<FontAwesomeIcon icon={faSearch} />}
             />
             <Input type="text" placeholder="Search" onChange={onChange} />
         </InputGroup>

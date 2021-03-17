@@ -9,7 +9,7 @@ const BaseHeader = ({ children }) => {
         right: 0,
         width: 'full',
         height: '3.5rem',
-        shadow: 'sm',
+        shadow: 'md',
         bg: 'white',
         zIndex: 999
     }
