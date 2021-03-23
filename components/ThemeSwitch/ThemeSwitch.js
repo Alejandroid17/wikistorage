@@ -1,21 +1,20 @@
-import { IconButton } from '@chakra-ui/react';
+import { IconButton, useColorMode } from '@chakra-ui/react';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext } from "react";
-import { GlobalContext } from "../../contexts/GlobalContext";
 
-const ThemeSwitch = ({ className, size }) => {
 
-    const [state, dispatch] = useContext(GlobalContext);
+const ThemeSwitch = ({ size }) => {
 
-    const icon = (state.theme === 'light')
+    const { colorMode, toggleColorMode } = useColorMode()
+
+    const icon = (colorMode === 'light')
         ? <FontAwesomeIcon icon={faMoon} size={size} />
         : <FontAwesomeIcon icon={faSun} size={size} />
 
     return <IconButton
         variant="ghost"
         ml={{ base: "0", md: "3" }}
-        onClick={() => dispatch({ type: 'TOGGLE_THEME' })}
+        onClick={toggleColorMode}
         icon={icon}
     />
 }

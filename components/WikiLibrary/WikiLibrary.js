@@ -1,15 +1,15 @@
-import { SimpleGrid, Box, Flex } from "@chakra-ui/react";
+import { Flex, SimpleGrid } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import Progress from "../Progress/Progress";
 
 const Wiki = dynamic(() => import('../Wiki/Wiki'), {ssr: false});
 
-export default function WikiLibrary({wikiList, isLoading}) {
+const WikiLibrary = ({wikiList, isLoading}) => {
 
     return (
         (isLoading)
             ? <Flex w="100%" align="center" justify="center" mt={'5rem'}>
-                <Progress items={['Wait', 'We are getting the data']}/>
+                <Progress items={['Wait', 'We are getting the data']} time={3000}/>
             </Flex>
             : <SimpleGrid columns={4} spacing={5}>
                 {
@@ -22,3 +22,5 @@ export default function WikiLibrary({wikiList, isLoading}) {
             </SimpleGrid>
     )
 }
+
+export default WikiLibrary;

@@ -7,7 +7,6 @@ import Head from '../components/Head/Head';
 import MainHeader from '../components/Header/MainHeader/MainHeader';
 import BaseMain from '../components/Main/BaseMain/BaseMain';
 import WikiLibrary from "../components/WikiLibrary/WikiLibrary";
-import { globalStyles } from './../styles/globalStyles';
 
 
 export default function Home() {
@@ -44,9 +43,6 @@ export default function Home() {
                 <WikiLibrary wikiList={list} isLoading={isLoading} />
             </BaseMain>
             <Footer />
-            <style jsx global>
-                {globalStyles}
-            </style>
         </>
     )
 }
