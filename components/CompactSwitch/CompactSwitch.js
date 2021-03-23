@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 
-const CompactSwitch = ({ className, size }) => {
+const CompactSwitch = ({ size }) => {
 
     const [state, dispatch] = useContext(GlobalContext);
 

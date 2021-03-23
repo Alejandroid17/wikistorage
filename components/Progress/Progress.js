@@ -1,4 +1,4 @@
-import { Box, Fade, Spinner, VStack } from "@chakra-ui/react";
+import { Box, Fade, Spinner, VStack, useStyleConfig } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
 
 const Progress = ({
@@ -6,9 +6,12 @@ const Progress = ({
     mode = 'loop',
     time = 2000,
     spinner = {
-        thickness: '6px', speed: '0.65s', emptyColor: 'gray.200', color: "blue.500", size: "xl"
+        thickness: '6px', speed: '0.65s', emptyColor: 'gray.200', size: "xl"
     }
 }) => {
+
+    const styles = useStyleConfig("Progress")
+
     const [text, setText] = useState({ id: null, index: 0, value: '' });
     const [isOpen, setIsOpen] = useState(false);
 
@@ -39,10 +42,10 @@ const Progress = ({
     return (
         <VStack>
             <Box>
-                <Spinner {...spinner} />
+                <Spinner sx={styles} {...spinner} />
             </Box>
             <Fade in={isOpen}>
-                <Box>{text.index}{text.value}</Box>
+                <Box>{text.value}</Box>
             </Fade>
         </VStack>
     )

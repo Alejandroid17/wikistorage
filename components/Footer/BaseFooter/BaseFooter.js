@@ -1,20 +1,11 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useStyleConfig } from "@chakra-ui/react";
 
 
 const BaseFooter = ({ children }) => {
 
-    const footerProps = {
-        bg: 'white',
-        borderTop: '1px solid',
-        borderTopColor: 'gray.100',
-        bottom: 0,
-        height: '3.3rem',
-        position: 'relative',
-        width: 'full',
-        zIndex: 999,
-    }
+    const styles = useStyleConfig("BaseFooter")
 
-    return <Box as='footer' {...footerProps}>
+    return <Box as='footer' sx={styles}>
         {children}
     </Box>
 }
