@@ -1,12 +1,9 @@
-import { chakra, useStyleConfig } from '@chakra-ui/react';
+import { chakra, useStyleConfig } from "@chakra-ui/react"
 
 const BaseHeader = ({ children }) => {
+  const styles = useStyleConfig("BaseHeader")
 
-    const styles = useStyleConfig("BaseHeader")
-
-    return <chakra.header sx={styles}>
-        {children}
-    </chakra.header>
+  return <chakra.header sx={styles}>{children}</chakra.header>
 }
 
-export default BaseHeader;
+export default BaseHeader

@@ -4,7 +4,6 @@ import BaseFooter from "../components/Footer/BaseFooter/BaseFooter.theme"
 import BaseHeader from "../components/Header/BaseHeader/BaseHeader.theme"
 import Progress from "../components/Progress/Progress.theme"
 
-
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
@@ -12,25 +11,28 @@ const config = {
 
 const styles = {
   global: (props) => ({
-    "html": {
-      bgGradient: `radial-gradient(#0049ff4d 1px, ${mode('#fdfdfd', 'gray.800')(props)} 2px)`,
-      bgPosition: '0 0, 27px 27px',
-      bgSize: '50px 50px',
-      height: '100%',
-      overflowY: 'hidden',
+    html: {
+      bgGradient: `radial-gradient(#0049ff4d 1px, ${mode(
+        "#fdfdfd",
+        "gray.800"
+      )(props)} 2px)`,
+      bgPosition: "0 0, 27px 27px",
+      bgSize: "50px 50px",
+      height: "100%",
+      overflowY: "hidden",
     },
-    "body": {
-      bg: 'transparent',
-      overflowY: 'auto',
+    body: {
+      bg: "transparent",
+      overflowY: "auto",
     },
-    '#__next': {
-      height: '100vh',
+    "#__next": {
+      height: "100vh",
     },
-    '.react_tinylink_card': {
-      borderRadius: '10px',
-      borderWidth: '0 !important',
-    }
-  })
+    ".react_tinylink_card": {
+      borderRadius: "10px",
+      borderWidth: "0 !important",
+    },
+  }),
 }
 
 const theme = {
@@ -39,8 +41,8 @@ const theme = {
   components: {
     BaseHeader,
     BaseFooter,
-    Progress
-  }
+    Progress,
+  },
 }
 
-export default extendTheme(theme);
+export default extendTheme(theme)
