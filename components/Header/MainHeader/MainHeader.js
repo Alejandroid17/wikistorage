@@ -20,7 +20,7 @@ const MainHeader = ({ onSearch }) => {
         </Flex>
         <Flex width="50%" justify="center">
           <SearchInput onChange={onSearch} />
-          <HStack spacing="5" display={{ base: "none", md: "flex" }}>
+          <HStack spacing={1} px={2} display={{ base: "none", md: "flex" }}>
             <CompactSwitch size={"lg"} />
             <ThemeSwitch size={"lg"} />
           </HStack>

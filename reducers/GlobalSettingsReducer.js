@@ -17,6 +17,14 @@ const GlobalSettingsReducer = (state, action) => {
         compact: !newState.compact,
       }
     },
+    TOGGLE_DRAWER: () => {
+      newState = {
+        ...state,
+        drawer: {
+          isOpen: !state.drawer.isOpen,
+        },
+      }
+    },
   }
   actions[action.type]()
   localStorageHelper.setValue("settings", newState)

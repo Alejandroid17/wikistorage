@@ -2,9 +2,9 @@ import { Link } from "@chakra-ui/react"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const GitHubLink = ({ showIcon = true, linkText }) => {
+const GitHubLink = ({ linkText, showIcon = true }) => {
   return (
-    <Link href="https://github.com/Alejandroid17/wikistorage">
+    <Link href="https://github.com/Alejandroid17/wikistorage" target={"blank"}>
       {showIcon && <FontAwesomeIcon icon={faGithub} size="2x" className="" />}
       {linkText}
     </Link>

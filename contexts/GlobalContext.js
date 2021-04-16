@@ -3,6 +3,9 @@ import localStorageHelper from "../helpers/localStorageHelper"
 import GlobalSettingsReducer from "../reducers/GlobalSettingsReducer"
 
 const defaultSettings = {
+  drawer: {
+    isOpen: false,
+  },
   theme: "light",
   compact: localStorageHelper.getValue("settings", "compact", true),
 }

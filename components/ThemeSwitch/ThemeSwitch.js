@@ -5,17 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const ThemeSwitch = ({ size }) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
-  const icon =
-    colorMode === "light" ? (
-      <FontAwesomeIcon icon={faMoon} size={size} />
-    ) : (
-      <FontAwesomeIcon icon={faSun} size={size} />
-    )
+  const icon = (
+    <FontAwesomeIcon
+      icon={colorMode === "light" ? faMoon : faSun}
+      size={size}
+    />
+  )
 
   return (
     <IconButton
+      w="100%"
       variant="ghost"
-      ml={{ base: "0", md: "3" }}
       onClick={toggleColorMode}
       icon={icon}
     />

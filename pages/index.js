@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import FirebaseClient from "../clients/firebase"
+import MainDrawer from "../components/Drawer/MainDrawer/MainDrawer"
 import Footer from "../components/Footer/MainFooter/MainFooter"
 import Head from "../components/Head/Head"
 import MainHeader from "../components/Header/MainHeader/MainHeader"
@@ -41,6 +42,7 @@ export default function Home() {
       <MainHeader onSearch={onSearch} />
       <BaseMain>
         <WikiLibrary wikiList={list} isLoading={isLoading} />
+        <MainDrawer />
       </BaseMain>
       <Footer />
     </>
