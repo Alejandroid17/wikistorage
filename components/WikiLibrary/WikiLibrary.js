@@ -10,7 +10,11 @@ const WikiLibrary = ({ wikiList, isLoading }) => {
       <Progress items={["Wait", "We are getting the data"]} time={3000} />
     </Flex>
   ) : (
-    <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={5}>
+    <SimpleGrid
+      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+      spacing={5}
+      justifyItems={"center"}
+    >
       {wikiList.length > 0 ? (
         wikiList.map((item, index) => {
           return <Wiki key={index} url={item.url[0]} />
