@@ -7,16 +7,14 @@ import { GlobalContext } from "../../contexts/GlobalContext"
 const CompactSwitch = ({ size }) => {
   const [state, dispatch] = useContext(GlobalContext)
 
-  const icon = state.compact ? (
-    <FontAwesomeIcon icon={faTh} size={size} />
-  ) : (
-    <FontAwesomeIcon icon={faThList} size={size} />
+  const icon = (
+    <FontAwesomeIcon icon={state.compact ? faTh : faThList} size={size} />
   )
 
   return (
     <IconButton
+      w="100%"
       variant="ghost"
-      ml={{ base: "0", md: "3" }}
       onClick={() => dispatch({ type: "TOGGLE_COMPACT" })}
       icon={icon}
     />
