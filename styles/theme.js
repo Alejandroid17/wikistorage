@@ -14,7 +14,7 @@ const styles = {
     html: {
       bgGradient: `radial-gradient(#0049ff4d 1px, ${mode(
         "#fdfdfd",
-        "gray.800"
+        "gray.800",
       )(props)} 2px)`,
       bgPosition: "0 0, 27px 27px",
       bgSize: "50px 50px",
@@ -29,6 +29,7 @@ const styles = {
       height: "100vh",
     },
     ".react_tinylink_card": {
+      width: "100%",
       borderRadius: "10px",
       borderWidth: "0 !important",
     },
