@@ -37,6 +37,7 @@ const Progress = ({
   }, [])
 
   useEffect(() => {
+    shuffle()
     const intervalID = setInterval(shuffle, time)
     setText((state) => {
       return { ...state, id: intervalID }
