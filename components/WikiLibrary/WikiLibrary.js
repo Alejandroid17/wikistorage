@@ -1,13 +1,24 @@
-import { Flex, SimpleGrid } from "@chakra-ui/react"
+import { Flex, SimpleGrid, Heading } from "@chakra-ui/react"
 import dynamic from "next/dynamic"
 import Progress from "../Progress/Progress"
 
 const Wiki = dynamic(() => import("../Wiki/Wiki"), { ssr: false })
 
+const messages = [
+  "Please, wait",
+  "Heroku app is sleeping",
+  "We are starting the application",
+  "We are getting the data",
+].map((message, index) => (
+  <Heading key={index} size="md">
+    {message}
+  </Heading>
+))
+
 const WikiLibrary = ({ wikiList, isLoading }) => {
   return isLoading ? (
     <Flex w="100%" align="center" justify="center" mt={"5rem"}>
-      <Progress items={["Wait", "We are getting the data"]} time={3000} />
+      <Progress items={messages} time={3000} />
     </Flex>
   ) : (
     <SimpleGrid

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import CorsAnywhere from "../clients/cors_anywhere"
 import FirebaseClient from "../clients/firebase"
 import MainDrawer from "../components/Drawer/MainDrawer/MainDrawer"
 import Footer from "../components/Footer/MainFooter/MainFooter"
@@ -18,10 +19,12 @@ export default function Home() {
       client = new FirebaseClient("wiki")
       client.fetchWikis((wikiList) => {
         setWikiList(wikiList)
-        setIsLoading(false)
+        CorsAnywhere.up(() => {
+          setIsLoading(false)
+        })
       })
     }
-  }, [wikiList])
+  }, [])
 
   const onSearch = (event) => {
     setSearchValue(event.target.value)
