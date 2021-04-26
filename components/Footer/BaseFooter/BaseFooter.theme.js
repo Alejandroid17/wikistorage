@@ -5,7 +5,7 @@ const BaseFooter = {
     borderTop: "1px solid",
     borderTopColor: mode("gray.300", "gray.700")(props),
     bottom: 0,
-    height: "3.3rem",
+    height: "3.7rem",
     position: "relative",
     width: "full",
     zIndex: 999,
