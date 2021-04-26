@@ -20,20 +20,20 @@ const WikiLibrary = ({ wikiList, isLoading }) => {
     <Flex w="100%" align="center" justify="center" mt={"5rem"}>
       <Progress items={messages} time={3000} />
     </Flex>
-  ) : (
+  ) : wikiList.length > 0 ? (
     <SimpleGrid
       columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
       spacing={5}
       justifyItems={"center"}
     >
-      {wikiList.length > 0 ? (
-        wikiList.map((item, index) => {
-          return <Wiki key={index} url={item.url[0]} />
-        })
-      ) : (
-        <div>Empty</div>
-      )}
+      {wikiList.map((item, index) => {
+        return <Wiki key={index} url={item.url[0]} />
+      })}
     </SimpleGrid>
+  ) : (
+    <Heading size="md" align="center">
+      Empty
+    </Heading>
   )
 }
 
