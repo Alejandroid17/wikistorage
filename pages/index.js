@@ -1,12 +1,14 @@
+import dynamic from "next/dynamic"
 import { useEffect, useState } from "react"
 import CorsAnywhere from "../clients/cors_anywhere"
 import FirebaseClient from "../clients/firebase"
-import MainDrawer from "../components/Drawer/MainDrawer/MainDrawer"
-import Footer from "../components/Footer/MainFooter/MainFooter"
-import Head from "../components/Head/Head"
-import MainHeader from "../components/Header/MainHeader/MainHeader"
-import BaseMain from "../components/Main/BaseMain/BaseMain"
-import WikiLibrary from "../components/WikiLibrary/WikiLibrary"
+
+const BaseMain = dynamic(import("../components/Main/BaseMain/BaseMain"))
+const MainFooter = dynamic(import("../components/Footer/MainFooter/MainFooter"))
+const Head = dynamic(import("../components/Head/Head"))
+const MainDrawer = dynamic(import("../components/Drawer/MainDrawer/MainDrawer"))
+const MainHeader = dynamic(import("../components/Header/MainHeader/MainHeader"))
+const WikiLibrary = dynamic(import("../components/WikiLibrary/WikiLibrary"))
 
 export default function Home() {
   let client = null
@@ -47,7 +49,7 @@ export default function Home() {
         <WikiLibrary wikiList={list} isLoading={isLoading} />
         <MainDrawer />
       </BaseMain>
-      <Footer />
+      <MainFooter />
     </>
   )
 }

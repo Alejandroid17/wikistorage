@@ -1,13 +1,16 @@
+import dynamic from "next/dynamic"
+
 import { Flex, HStack } from "@chakra-ui/react"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faBoxOpen, faSearch } from "@fortawesome/free-solid-svg-icons"
-import CompactSwitch from "../../CompactSwitch/CompactSwitch"
-import GitHubLink from "../../Link/GitHubLink"
-import SearchInput from "../../SearchInput"
-import ThemeSwitch from "../../ThemeSwitch/ThemeSwitch"
-import BaseHeader from "../BaseHeader/BaseHeader"
-import TitleHeader from "../TitleHeader/TitleHeader"
+
+const CompactSwitch = dynamic(import("../../CompactSwitch/CompactSwitch"))
+const GitHubLink = dynamic(import("../../Link/GitHubLink"))
+const SearchInput = dynamic(import("../../SearchInput"))
+const ThemeSwitch = dynamic(import("../../ThemeSwitch/ThemeSwitch"))
+const BaseHeader = dynamic(import("../BaseHeader/BaseHeader"))
+const TitleHeader = dynamic(import("../TitleHeader/TitleHeader"))
 
 library.add(faBoxOpen, faSearch, faGithub)
 
