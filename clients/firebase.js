@@ -23,7 +23,7 @@ export default class FirebaseClient {
     this.db
       .collection(this.collection)
       .orderBy("creation_date", "desc")
-      .limit(2)
+      // .limit(2)
       .onSnapshot(({ docs }) => {
         callBack(
           docs.map((doc) => {
