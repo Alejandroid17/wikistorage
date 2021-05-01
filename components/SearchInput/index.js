@@ -1,4 +1,10 @@
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react"
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  VisuallyHidden,
+  FormLabel,
+} from "@chakra-ui/react"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -8,7 +14,15 @@ const SearchInput = ({ onChange }) => {
       <InputLeftElement pointerEvents="none" color="gray.500">
         <FontAwesomeIcon icon={faSearch} />
       </InputLeftElement>
-      <Input type="text" placeholder="Search" onChange={onChange} />
+      <VisuallyHidden>
+        <FormLabel htmlFor="search-input">Search</FormLabel>
+      </VisuallyHidden>
+      <Input
+        id="search-input"
+        type="text"
+        placeholder="Search"
+        onChange={onChange}
+      />
     </InputGroup>
   )
 }

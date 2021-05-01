@@ -1,7 +1,8 @@
-import { Flex, SimpleGrid, Heading } from "@chakra-ui/react"
+import { Flex, Heading, SimpleGrid } from "@chakra-ui/react"
 import dynamic from "next/dynamic"
-import Progress from "../Progress/Progress"
+import { useEffect } from "react"
 
+const Progress = dynamic(import("../Progress/Progress"))
 const Wiki = dynamic(() => import("../Wiki/Wiki"), { ssr: false })
 
 const messages = [
@@ -16,6 +17,8 @@ const messages = [
 ))
 
 const WikiLibrary = ({ wikiList, isLoading }) => {
+  useEffect(() => {}, [])
+
   return isLoading ? (
     <Flex w="100%" align="center" justify="center" mt={"5rem"}>
       <Progress items={messages} time={3000} />

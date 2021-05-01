@@ -1,6 +1,8 @@
 import { Flex, Text } from "@chakra-ui/react"
-import GitHubLink from "../../Link/GitHubLink"
+import dynamic from "next/dynamic"
 import BaseFooter from "../BaseFooter/BaseFooter"
+
+const GitHubLink = dynamic(import("../../Link/GitHubLink"))
 
 const MainFooter = () => {
   return (
