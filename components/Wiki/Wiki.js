@@ -14,8 +14,6 @@ const Wiki = ({ url }) => {
       minLine={1}
       url={url}
       proxyUrl={CorsAnywhereConfig.url}
-      onSuccess={(e) => console.log(e)}
-      defaultMedia={"https://www.gstatic.com/webp/gallery/1.jpg"}
     />
   )
 }
