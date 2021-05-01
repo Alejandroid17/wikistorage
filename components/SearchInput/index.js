@@ -15,7 +15,7 @@ const SearchInput = ({ onChange }) => {
         <FontAwesomeIcon icon={faSearch} />
       </InputLeftElement>
       <VisuallyHidden>
-        <FormLabel for="search-input">Search</FormLabel>
+        <FormLabel htmlFor="search-input">Search</FormLabel>
       </VisuallyHidden>
       <Input
         id="search-input"
