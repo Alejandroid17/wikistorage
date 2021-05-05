@@ -8,8 +8,9 @@ const GitHubLink = ({ linkText, showIcon = true }) => {
       href="https://github.com/Alejandroid17/wikistorage"
       target={"blank"}
       aria-label="GitHub"
+      w={34}
     >
-      {showIcon && <FontAwesomeIcon icon={faGithub} size="2x" className="" />}
+      {showIcon && <FontAwesomeIcon icon={faGithub} size="2x" />}
       {linkText}
     </Link>
   )
