@@ -13,8 +13,8 @@ const TitleHeader = () => {
       onClick={() => dispatch({ type: "TOGGLE_DRAWER" })}
       cursor={"pointer"}
     >
-      <Box>
-        <FontAwesomeIcon icon={faBoxOpen} size="2x" />
+      <Box w="40px">
+        <FontAwesomeIcon icon={faBoxOpen} />
       </Box>
       {showTitle && (
         <Box>

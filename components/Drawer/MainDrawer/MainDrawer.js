@@ -13,12 +13,12 @@ const MainDrawer = () => {
       onClose={() => dispatch({ type: "TOGGLE_DRAWER" })}
       header={"WikiStorage"}
     >
-      <HStack spacing={0} justify>
-        <Box w="100%">
-          <CompactSwitch size={"lg"} />
+      <HStack spacing={4} justify={"center"}>
+        <Box w="40px" h="40px">
+          <CompactSwitch />
         </Box>
-        <Box w="100%">
-          <ThemeSwitch size={"lg"} />
+        <Box w="40px" h="40px">
+          <ThemeSwitch />
         </Box>
       </HStack>
     </BaseDrawer>

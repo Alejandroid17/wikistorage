@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const SearchInput = ({ onChange }) => {
   return (
     <InputGroup boxShadow="lg">
-      <InputLeftElement pointerEvents="none" color="gray.500">
+      <InputLeftElement pointerEvents="none" color="gray.500" p={2}>
         <FontAwesomeIcon icon={faSearch} />
       </InputLeftElement>
       <VisuallyHidden>

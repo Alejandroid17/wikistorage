@@ -4,16 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useContext } from "react"
 import { GlobalContext } from "../../contexts/GlobalContext"
 
-const CompactSwitch = ({ size }) => {
+const CompactSwitch = () => {
   const [state, dispatch] = useContext(GlobalContext)
 
-  const icon = (
-    <FontAwesomeIcon icon={state.compact ? faTh : faThList} size={size} />
-  )
+  const icon = <FontAwesomeIcon icon={state.compact ? faTh : faThList} />
 
   return (
     <IconButton
       w="100%"
+      p={1.5}
       variant="ghost"
       onClick={() => dispatch({ type: "TOGGLE_COMPACT" })}
       icon={icon}
