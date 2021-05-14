@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
-import { useEffect, useState } from "react"
-import CorsAnywhere from "../clients/cors_anywhere"
+import { useState } from "react"
 import FirebaseClient from "../clients/firebase"
+import { cacheable } from "../helpers/decorators/cache"
 
 const BaseMain = dynamic(import("../components/Main/BaseMain/BaseMain"))
 const MainFooter = dynamic(import("../components/Footer/MainFooter/MainFooter"))
@@ -10,23 +10,24 @@ const MainDrawer = dynamic(import("../components/Drawer/MainDrawer/MainDrawer"))
 const MainHeader = dynamic(import("../components/Header/MainHeader/MainHeader"))
 const WikiLibrary = dynamic(import("../components/WikiLibrary/WikiLibrary"))
 
-export default function Home() {
-  let client = null
-  const [wikiList, setWikiList] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [searchValue, setSearchValue] = useState("")
+export async function getStaticProps() {
+  const client = new FirebaseClient("wiki")
+  const wikiList = await cacheable(() => client.fetchWikis(), {
+    key: "wikilist",
+    time: 60 * 60 * 10,
+  })
 
-  useEffect(() => {
-    if (isLoading) {
-      client = new FirebaseClient("wiki")
-      client.fetchWikis((wikiList) => {
-        setWikiList(wikiList)
-        CorsAnywhere.up(() => {
-          setIsLoading(false)
-        })
-      })
-    }
-  }, [])
+  return {
+    props: {
+      wikiList,
+    },
+  }
+}
+
+export default function Home(props) {
+  const [wikiList] = useState(props.wikiList)
+  const [isLoading] = useState(false)
+  const [searchValue, setSearchValue] = useState("")
 
   const onSearch = (event) => {
     setSearchValue(event.target.value)

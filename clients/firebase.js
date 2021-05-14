@@ -19,22 +19,20 @@ export default class FirebaseClient {
     this.collection = collection
   }
 
-  fetchWikis(callBack) {
-    this.db
-      .collection(this.collection)
-      .orderBy("creation_date", "desc")
-      // .limit(2)
-      .onSnapshot(({ docs }) => {
-        callBack(
-          docs.map((doc) => {
-            const id = doc.id
-            return {
-              ...doc.data(),
-              id,
-            }
-          }),
-        )
+  async fetchWikis() {
+    const wikiList = []
+    const wikiRef = this.db.collection(this.collection)
+    const snapshot = await wikiRef.orderBy("creation_date", "desc").get()
+
+    snapshot.forEach((doc) => {
+      const id = doc.id
+      wikiList.push({
+        ...doc.data(),
+        id,
       })
+    })
+
+    return wikiList
   }
 
   filterWikis(value) {
