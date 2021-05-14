@@ -21,6 +21,7 @@
     "firebase": "^7.24.0",
     "framer-motion": "^3.10.0",
     "next": "^10.1.3",
+    "node-cache": "^5.1.2",
     "react": "^17.0.2",
     "react-dom": "16.13.1",
     "react-tiny-link": "^3.6.1",
