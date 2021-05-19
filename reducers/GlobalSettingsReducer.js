@@ -25,6 +25,12 @@ const GlobalSettingsReducer = (state, action) => {
         },
       }
     },
+    SET_TOTAL_NUMBER_ELEMENTS: () => {
+      newState = {
+        ...state,
+        totalNumberElements: action.value,
+      }
+    },
   }
   actions[action.type]()
   localStorageHelper.setValue("settings", newState)
