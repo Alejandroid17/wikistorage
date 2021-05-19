@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic"
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import FirebaseClient from "../clients/firebase"
+import { GlobalContext } from "../contexts/GlobalContext"
 import { cacheable } from "../helpers/decorators/cache"
 
 const BaseMain = dynamic(import("../components/Main/BaseMain/BaseMain"))
@@ -25,9 +26,14 @@ export async function getStaticProps() {
 }
 
 export default function Home(props) {
+  const [, dispatch] = useContext(GlobalContext)
   const [wikiList] = useState(props.wikiList)
   const [isLoading] = useState(false)
   const [searchValue, setSearchValue] = useState("")
+
+  useEffect(() => {
+    dispatch({ type: "SET_TOTAL_NUMBER_ELEMENTS", value: wikiList.length })
+  }, [props.wikiList.length])
 
   const onSearch = (event) => {
     setSearchValue(event.target.value)
@@ -42,6 +48,7 @@ export default function Home(props) {
   }
 
   const list = search()
+
   return (
     <>
       <Head />

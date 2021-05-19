@@ -32,7 +32,7 @@ In the secret settings of your project on GitHub, you need to define:
 ## Dependencies
 
 - Python 3.8
-- NextJS 9.5.2
+- NextJS 10.1.3
 
 ## Deploy
 

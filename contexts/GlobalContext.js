@@ -8,6 +8,7 @@ const defaultSettings = {
   },
   theme: "light",
   compact: localStorageHelper.getValue("settings", "compact", true),
+  totalNumberElements: 0,
 }
 
 export const GlobalContext = createContext(defaultSettings)
