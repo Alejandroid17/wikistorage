@@ -41,3 +41,7 @@ id;url;hashtags;creation_date
 64;https://squoosh.app/;squoosh,image,compression;1619903337.0
 65;https://github.com/google/zx;zx,scripts,google,terminal,github;1620673411.0
 66;https://relay.dev/;relay,graphql,scale;1621196503.0
+67;https://github.com/privatenumber/esbuild-loader;esbuild,webpack,loader,transpilation;1621550812.0
+68;https://www.npmjs.com/package/uglify-js;uglify,parser,minifier,compressor;1621550930.0
+69;https://github.com/pmndrs/zustand;zustand,react,state,repository;1621551025.0
+70;https://github.com/pmndrs/jotai;jotai,state,react,repository;1621551091.0
