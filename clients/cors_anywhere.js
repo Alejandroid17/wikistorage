@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const CorsAnywhereConfig = {
-  url: "https://nextjs-proxy-cors-dev.vercel.app/api?url=",
+  url: "https://infinite-proxy-cors.herokuapp.com",
 }
 
 class CorsAnywhere {
