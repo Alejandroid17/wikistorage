@@ -1,5 +1,11 @@
-import firebase from "firebase/app"
-import "firebase/firestore"
+import { initializeApp } from "firebase/app"
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  orderBy,
+} from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyB7RShEHIe_X8_461kyeedfcZvtKlroDiw",
@@ -12,17 +18,19 @@ const firebaseConfig = {
   measurementId: "G-XVC56RL11N",
 }
 
+const app = initializeApp(firebaseConfig)
 export default class FirebaseClient {
   constructor(collection) {
-    !firebase.apps.length && firebase.initializeApp(firebaseConfig)
-    this.db = firebase.firestore()
+    !app && initializeApp(firebaseConfig)
+    this.db = getFirestore(app)
     this.collection = collection
   }
 
   async fetchWikis() {
     const wikiList = []
-    const wikiRef = this.db.collection(this.collection)
-    const snapshot = await wikiRef.orderBy("creation_date", "desc").get()
+    const wikiRef = collection(this.db, this.collection)
+    const q = query(wikiRef, orderBy("creation_date", "desc"))
+    const snapshot = await getDocs(q)
 
     snapshot.forEach((doc) => {
       const id = doc.id
