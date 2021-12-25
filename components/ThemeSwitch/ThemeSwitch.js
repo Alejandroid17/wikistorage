@@ -1,11 +1,12 @@
-import { useColorMode } from "@chakra-ui/react"
+import { useContext } from "react"
+import { GlobalContext } from "../../contexts/GlobalContext"
 
 const ThemeSwitch = ({ iconClassName }) => {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const [state, dispatch] = useContext(GlobalContext)
 
   return (
-    <button onClick={toggleColorMode}>
-      {colorMode === "light" ? (
+    <button onClick={() => dispatch({ type: "TOGGLE_THEME" })}>
+      {state.theme === "light" ? (
         <div className="flex gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
