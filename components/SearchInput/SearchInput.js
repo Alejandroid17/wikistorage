@@ -26,8 +26,8 @@ const SearchInput = ({ onChange }) => {
       </span>
       <input
         type="text"
-        placeholder={`Search in the ${state.totalNumberElements} elements`}
-        className="relative w-full py-2 text-sm text-gray-400 bg-white border rounded outline-none pl-9"
+        placeholder={`Search`}
+        className="relative w-full py-2 text-sm bg-white border rounded outline-none placeholder:text-gray-400 pl-9"
         onChange={onChange}
       />
     </div>
