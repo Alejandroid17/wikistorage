@@ -1,14 +1,11 @@
 import Document, { Head, Html, Main, NextScript } from "next/document"
-import { ColorModeScript } from "@chakra-ui/react"
-import theme from "../styles/theme"
 
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head />
-        <body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <body className="antialiased bg-white">
           <Main />
           <NextScript />
         </body>
