@@ -1,4 +1,3 @@
-import { Flex, Heading, SimpleGrid } from "@chakra-ui/react"
 import dynamic from "next/dynamic"
 import { useEffect } from "react"
 
@@ -11,32 +10,28 @@ const messages = [
   "We are starting the application",
   "We are getting the data",
 ].map((message, index) => (
-  <Heading key={index} size="md">
+  <div key={index} size="md">
     {message}
-  </Heading>
+  </div>
 ))
 
 const WikiLibrary = ({ wikiList, isLoading }) => {
   useEffect(() => {}, [])
 
   return isLoading ? (
-    <Flex w="100%" align="center" justify="center" mt={"5rem"}>
+    <div className="flex">
       <Progress items={messages} time={3000} />
-    </Flex>
+    </div>
   ) : wikiList.length > 0 ? (
-    <SimpleGrid
-      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-      spacing={5}
-      justifyItems={"center"}
-    >
-      {wikiList.map((item, index) => {
-        return <Wiki key={index} url={item.url[0]} />
-      })}
-    </SimpleGrid>
+    <div className="grid gap-5 md:grid-cols-3 sm:grid-cols-1 lg:grid-cols-4">
+      {wikiList.map((wiki, index) => (
+        <Wiki key={index} url={wiki.url[0]} />
+      ))}
+    </div>
   ) : (
-    <Heading size="md" align="center">
-      Empty
-    </Heading>
+    <div className="flex justify-center">
+      <span className="">Empty</span>
+    </div>
   )
 }
 
