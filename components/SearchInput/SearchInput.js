@@ -1,8 +1,8 @@
-import { useContext } from "react"
-import { GlobalContext } from "../../contexts/GlobalContext"
+// import { useContext } from "react"
+// import { GlobalContext } from "../../contexts/GlobalContext"
 
 const SearchInput = ({ onChange }) => {
-  const [state] = useContext(GlobalContext)
+  // const [state] = useContext(GlobalContext)
 
   return (
     <div className="relative flex flex-wrap items-stretch w-full">

@@ -1,8 +1,8 @@
-import { useContext } from "react"
-import { GlobalContext } from "../../../contexts/GlobalContext"
+// import { useContext } from "react"
+// import { GlobalContext } from "../../../contexts/GlobalContext"
 
 const TitleHeader = () => {
-  const [, dispatch] = useContext(GlobalContext)
+  // const [, dispatch] = useContext(GlobalContext)
 
   return (
     <div className="flex items-center gap-2">
