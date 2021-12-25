@@ -1,13 +1,5 @@
-import { Box, useStyleConfig } from "@chakra-ui/react"
-
 const BaseFooter = ({ children }) => {
-  const styles = useStyleConfig("BaseFooter")
-
-  return (
-    <Box as="footer" sx={styles}>
-      {children}
-    </Box>
-  )
+  return <footer className="py-3 bg-white border-t">{children}</footer>
 }
 
 export default BaseFooter
