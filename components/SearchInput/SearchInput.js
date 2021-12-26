@@ -5,7 +5,7 @@ const SearchInput = ({ onChange }) => {
   // const [state] = useContext(GlobalContext)
 
   return (
-    <div className="relative flex flex-wrap items-stretch w-full">
+    <div className="w-full">
       <span className="absolute z-10 flex items-center justify-center h-full ml-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"

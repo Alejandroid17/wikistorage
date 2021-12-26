@@ -15,9 +15,7 @@ const MainHeader = ({ onSearch }) => {
       </div>
       <div className="flex gap-1 overflow-hidden w-3/3 sm:w-2/3 lg:w-3/5">
         <SearchInput onChange={onSearch} />
-        <div>
-          <SettingMenu />
-        </div>
+        <SettingMenu />
       </div>
       <div className="flex items-center justify-end w-1/3 pl-8 lg:w-1/5">
         <GitHubLink href="https://github.com/Alejandroid17/wikistorage" />
