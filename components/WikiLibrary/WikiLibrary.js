@@ -4,16 +4,16 @@ import { useEffect } from "react"
 // const Progress = dynamic(import("../Progress/Progress"))
 const Wiki = dynamic(() => import("../Wiki/Wiki"), { ssr: false })
 
-const messages = [
-  "Please, wait",
-  "Heroku app is sleeping",
-  "We are starting the application",
-  "We are getting the data",
-].map((message, index) => (
-  <div key={index} size="md">
-    {message}
-  </div>
-))
+// const messages = [
+//   "Please, wait",
+//   "Heroku app is sleeping",
+//   "We are starting the application",
+//   "We are getting the data",
+// ].map((message, index) => (
+//   <div key={index} size="md">
+//     {message}
+//   </div>
+// ))
 
 const WikiLibrary = ({ wikiList, isLoading }) => {
   useEffect(() => {}, [])
