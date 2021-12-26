@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 import { useEffect } from "react"
 
-const Progress = dynamic(import("../Progress/Progress"))
+// const Progress = dynamic(import("../Progress/Progress"))
 const Wiki = dynamic(() => import("../Wiki/Wiki"), { ssr: false })
 
 const messages = [
@@ -20,7 +20,7 @@ const WikiLibrary = ({ wikiList, isLoading }) => {
 
   return isLoading ? (
     <div className="flex">
-      <Progress items={messages} time={3000} />
+      {/* <Progress items={messages} time={3000} /> */}
     </div>
   ) : wikiList.length > 0 ? (
     <div className="grid gap-5 md:grid-cols-3 sm:grid-cols-1 lg:grid-cols-4">

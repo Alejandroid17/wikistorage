@@ -1,16 +1,11 @@
 import dynamic from "next/dynamic"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faBoxOpen, faSearch } from "@fortawesome/free-solid-svg-icons"
 import SettingMenu from "../../Menus/SettingMenu"
 
 const GitHubLink = dynamic(import("../../Link/GitHubLink"))
 const SearchInput = dynamic(import("../../SearchInput/SearchInput"))
 const BaseHeader = dynamic(import("../BaseHeader/BaseHeader"))
 const TitleHeader = dynamic(import("../TitleHeader/TitleHeader"))
-
-library.add(faBoxOpen, faSearch, faGithub)
 
 const MainHeader = ({ onSearch }) => {
   return (
@@ -20,7 +15,7 @@ const MainHeader = ({ onSearch }) => {
       </div>
       <div className="flex gap-1 overflow-hidden w-3/3 sm:w-2/3 lg:w-3/5">
         <SearchInput onChange={onSearch} />
-        <div className="">
+        <div>
           <SettingMenu />
         </div>
       </div>
