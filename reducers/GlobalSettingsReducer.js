@@ -9,7 +9,8 @@ const GlobalSettingsReducer = (state, action) => {
         ...state,
         theme: newState.theme === "light" ? "dark" : "light",
       }
-      document.documentElement.setAttribute("theme", newState.theme)
+      document.documentElement.classList.remove(state.theme)
+      document.documentElement.classList.add(newState.theme)
     },
     TOGGLE_COMPACT: () => {
       newState = {

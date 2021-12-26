@@ -7,7 +7,6 @@ import { cacheable } from "../helpers/decorators/cache"
 const BaseMain = dynamic(import("../components/Main/BaseMain/BaseMain"))
 const MainFooter = dynamic(import("../components/Footer/MainFooter/MainFooter"))
 const Head = dynamic(import("../components/Head/Head"))
-const MainDrawer = dynamic(import("../components/Drawer/MainDrawer/MainDrawer"))
 const MainHeader = dynamic(import("../components/Header/MainHeader/MainHeader"))
 const WikiLibrary = dynamic(import("../components/WikiLibrary/WikiLibrary"))
 
@@ -55,7 +54,6 @@ export default function Home(props) {
       <MainHeader onSearch={onSearch} />
       <BaseMain>
         <WikiLibrary wikiList={list} isLoading={isLoading} />
-        <MainDrawer />
       </BaseMain>
       <MainFooter />
     </>

@@ -1,10 +1,8 @@
-import { Box } from "@chakra-ui/react"
-
 const BaseMain = ({ children }) => {
   return (
-    <Box as="main" pt={"5rem"} pb={"3rem"} px={"1.5rem"} minH={"94vh"}>
+    <main className="min-h-screen px-6 py-6 dark:bg-slate-700 dark:border-slate-600">
       {children}
-    </Box>
+    </main>
   )
 }
 

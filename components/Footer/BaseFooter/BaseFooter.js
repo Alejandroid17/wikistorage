@@ -1,12 +1,8 @@
-import { Box, useStyleConfig } from "@chakra-ui/react"
-
 const BaseFooter = ({ children }) => {
-  const styles = useStyleConfig("BaseFooter")
-
   return (
-    <Box as="footer" sx={styles}>
+    <footer className="py-3 bg-white border-t dark:bg-slate-800 dark:border-slate-600">
       {children}
-    </Box>
+    </footer>
   )
 }
 
