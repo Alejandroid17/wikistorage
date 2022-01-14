@@ -25,7 +25,7 @@ const WikiLibrary = ({ wikiList, isLoading }) => {
   ) : wikiList.length > 0 ? (
     <div className="grid gap-5 md:grid-cols-3 sm:grid-cols-1 lg:grid-cols-4">
       {wikiList.map((wiki, index) => (
-        <Wiki key={index} url={wiki.url[0]} />
+        <Wiki key={index} id={wiki.id} url={wiki.url[0]} />
       ))}
     </div>
   ) : (
